@@ -109,7 +109,7 @@ func (m *MyChainingHashMap[K, V]) Get(key K) *V {
 	return nil
 }
 
-// 返回所有 key
+// Keys 返回所有 key
 func (m *MyChainingHashMap[K, V]) Keys() []K {
 	var keys []K
 	for _, l := range m.table {
@@ -121,7 +121,7 @@ func (m *MyChainingHashMap[K, V]) Keys() []K {
 	return keys
 }
 
-// 返回当前哈希表中的键值对个数
+// Size 返回当前哈希表中的键值对个数
 func (m *MyChainingHashMap[K, V]) Size() int {
 	return m.size
 }

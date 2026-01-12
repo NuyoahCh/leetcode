@@ -27,6 +27,7 @@ func NewMyLinearProbingHashMap1WithCapacity[K comparable, V any](initCapacity in
 }
 
 // **** 增/改 ****
+
 func (m *MyLinearProbingHashMap1[K, V]) Put(key K, val V) error {
 	// 负载因子默认设为 0.75，超过则扩容
 	if m.size >= len(m.table)*3/4 {
@@ -47,6 +48,7 @@ func (m *MyLinearProbingHashMap1[K, V]) Put(key K, val V) error {
 }
 
 // **** 删 ****
+
 func (m *MyLinearProbingHashMap1[K, V]) Remove(key K) error {
 	// 缩容，当负载因子小于 0.125 时，缩容
 	if m.size <= len(m.table)/8 {
@@ -76,6 +78,7 @@ func (m *MyLinearProbingHashMap1[K, V]) Remove(key K) error {
 }
 
 // **** 查 ****
+
 func (m *MyLinearProbingHashMap1[K, V]) Get(key K) (V, error) {
 	index := m.getKeyIndex(key)
 	if m.table[index] == nil {
@@ -89,9 +92,9 @@ func (m *MyLinearProbingHashMap1[K, V]) ContainsKey(key K) bool {
 	return m.table[index] != nil
 }
 
-// 返回所有 key（顺序不固定）
+// Keys 返回所有 key（顺序不固定）
 func (m *MyLinearProbingHashMap1[K, V]) Keys() []K {
-	keys := []K{}
+	var keys []K
 	for _, entry := range m.table {
 		if entry != nil {
 			keys = append(keys, entry.key)
@@ -101,6 +104,7 @@ func (m *MyLinearProbingHashMap1[K, V]) Keys() []K {
 }
 
 // **** 其他工具函数 ****
+
 func (m *MyLinearProbingHashMap1[K, V]) Size() int {
 	return m.size
 }
