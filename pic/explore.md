@@ -1,1 +1,0 @@
-All previous photos have been deleted.
