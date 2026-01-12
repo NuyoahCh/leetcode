@@ -31,6 +31,7 @@ func (ca *CycleArray[T]) resize(newSize int) {
 	newArr := make([]T, newSize)
 	// 将旧数组的元素复制到新数组中
 	for i := 0; i < ca.count; i++ {
+		// notice
 		newArr[i] = ca.arr[(ca.start+i)%ca.size]
 	}
 	ca.arr = newArr

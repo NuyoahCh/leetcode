@@ -58,6 +58,9 @@ func (bs *MyBitSet) Clear(bitIndex int) {
 func main() {
 	bitSet := NewMyBitSet(1000)
 
+	// cnt := []int{26}
+	// slice_demo := make([]int, 0, 5)
+
 	bitSet.Set(10)
 	bitSet.Set(100)
 	bitSet.Set(500)
