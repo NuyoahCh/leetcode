@@ -1,5 +1,6 @@
 package main
 
+// 合并有序链表模版
 func dualSourceTemplate(l1 *ListNode, l2 *ListNode) *ListNode {
 	// 1. 虚拟头结点技巧：简化新链表构建的边界处理
 	dummy := &ListNode{Val: -1}
